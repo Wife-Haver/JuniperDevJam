@@ -23,7 +23,8 @@ func _on_area_entered(area: Node2D) -> void:
 	_handle_hit(area)
 
 func _handle_hit(target: Node2D) -> void:
-	
+	if target is Asteroid:
+		target.queue_free()
 	queue_free()
 
 func _on_left_screen():

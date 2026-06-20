@@ -1,8 +1,34 @@
 [gd_scene format=3 uid="uid://do7l3vsqxf4lj"]
 
+[ext_resource type="Script" uid="uid://c6b3m7mmlplaj" path="res://Scripts/MainGameScene/asteroid_spawner.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bgpj1j7vpry5s" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
+[sub_resource type="Curve2D" id="Curve2D_jjgbg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -34, -34, 0, 0, 0, 0, 689, -27, 0, 0, 0, 0, 688, 661, 0, 0, 0, 0, -32, 660, 0, 0, 0, 0, -34, -34)
+}
+point_count = 5
 
 [node name="Main" type="Node2D" unique_id=2091276514]
 
+[node name="Scripts" type="Node" parent="." unique_id=1257398003]
+
+[node name="AsteroidSpawner" type="Node" parent="Scripts" unique_id=833771969 node_paths=PackedStringArray("spawner_pos")]
+script = ExtResource("1_bo1nx")
+spawner_pos = NodePath("../../SpawnerPath/SpawnerPos")
+
+[node name="SpawnTimer" type="Timer" parent="Scripts/AsteroidSpawner" unique_id=466107144]
+autostart = true
+
 [node name="Player" parent="." unique_id=1870216369 instance=ExtResource("1_jjgbg")]
 position = Vector2(320, 320)
+
+[node name="SpawnerPath" type="Path2D" parent="." unique_id=1154844031]
+position = Vector2(0, 7)
+curve = SubResource("Curve2D_jjgbg")
+
+[node name="SpawnerPos" type="PathFollow2D" parent="SpawnerPath" unique_id=1114359231]
+position = Vector2(-34, -34)
+rotation = 0.009681579
+
+[connection signal="timeout" from="Scripts/AsteroidSpawner/SpawnTimer" to="Scripts/AsteroidSpawner" method="_on_timeout"]
