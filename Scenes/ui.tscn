@@ -16,7 +16,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="UI" type="Control" unique_id=419821999 node_paths=PackedStringArray("progress_bar")]
+[node name="UI" type="Control" unique_id=419821999 node_paths=PackedStringArray("progress_bar", "score_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,9 +24,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxero")
-progress_bar = NodePath("HBoxContainer/Panel/ProgressBar")
+progress_bar = NodePath("BottomBar/Panel/ProgressBar")
+score_label = NodePath("TopBar/Panel/ScoreLabel")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=196207415]
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=2084263906]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="TopBar" unique_id=980659946]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="TopBar/Panel" unique_id=1550221338]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="BottomBar" type="HBoxContainer" parent="." unique_id=196207415]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -36,10 +53,10 @@ offset_top = -27.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="HBoxContainer" unique_id=1863121300]
+[node name="Panel" type="Panel" parent="BottomBar" unique_id=1863121300]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/Panel" unique_id=1008664742]
+[node name="ProgressBar" type="ProgressBar" parent="BottomBar/Panel" unique_id=1008664742]
 layout_mode = 0
 offset_left = 3.0
 offset_right = 268.0

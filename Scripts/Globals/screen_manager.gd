@@ -7,11 +7,12 @@ const MAIN_SCENE:PackedScene = preload("uid://do7l3vsqxf4lj")
 #signal game_start
 
 func end_game()->void:
-	get_tree().change_scene_to_packed(GAME_OVER_SCREEN)
+	get_tree().change_scene_to_packed.call_deferred(GAME_OVER_SCREEN)
 
 func start_game()->void:
-	get_tree().change_scene_to_packed(MAIN_SCENE)
+	get_tree().change_scene_to_packed.call_deferred(MAIN_SCENE)
 
 func restart_stats()->void:
 	PlayerManager.set_max_hp(10)
 	PlayerManager.set_current_hp(10)
+	ScoreManager.set_player_score(0)
