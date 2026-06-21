@@ -1,7 +1,7 @@
 extends Node
 @export var player: Player
 
-var rotate_speed:float = 2.0
+var rotate_speed:float = 2.5
  
 var spin_direction: int = 1  # 1 = clockwise, -1 = counterclockwise
 

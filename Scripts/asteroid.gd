@@ -10,12 +10,6 @@ func _ready():
 	spin_direction = [-1, 1].pick_random()
 	angular_velocity = rotate_speed * spin_direction
 
-#func _physics_process(delta):
-	#rotate_sprite(delta)
-#
-#func rotate_sprite(delta):
-	#rotation += rotate_speed * spin_direction * delta
-#
 
 
 

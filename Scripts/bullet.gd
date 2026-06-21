@@ -2,7 +2,6 @@ class_name Bullet
 extends Area2D
 
 @export var speed: float = 600.0
-@export var lifetime: float = 2.0  # seconds before auto-destroy, prevents bullets flying forever offscreen
 
 var velocity: Vector2 = Vector2.ZERO
 
