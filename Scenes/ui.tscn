@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bvsy4p2ugn5ha"]
 
 [ext_resource type="Script" uid="uid://c32oq6ycwj2ik" path="res://Scripts/UI/ui.gd" id="1_jxero"]
+[ext_resource type="Script" uid="uid://8tx11oxn2vph" path="res://Scripts/UI/score_label.gd" id="2_qdvrb"]
+[ext_resource type="Script" uid="uid://cl5vfi4ku8opn" path="res://Scripts/UI/progress_bar.gd" id="3_nf4gj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
 bg_color = Color(0, 0, 0, 0.4862745)
@@ -16,7 +18,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="UI" type="Control" unique_id=419821999 node_paths=PackedStringArray("progress_bar", "score_label")]
+[node name="UI" type="Control" unique_id=419821999]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,8 +26,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxero")
-progress_bar = NodePath("BottomBar/Panel/ProgressBar")
-score_label = NodePath("TopBar/Panel/ScoreLabel")
 
 [node name="TopBar" type="HBoxContainer" parent="." unique_id=2084263906]
 layout_mode = 1
@@ -42,6 +42,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 30
 text = "0"
+script = ExtResource("2_qdvrb")
 
 [node name="BottomBar" type="HBoxContainer" parent="." unique_id=196207415]
 layout_mode = 1
@@ -66,3 +67,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jxero")
 step = 1.0
 value = 50.0
 show_percentage = false
+script = ExtResource("3_nf4gj")
