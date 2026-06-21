@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bvsy4p2ugn5ha"]
+
+[ext_resource type="Script" uid="uid://c32oq6ycwj2ik" path="res://Scripts/UI/ui.gd" id="1_jxero"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
+bg_color = Color(0, 0, 0, 0.4862745)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxero"]
+bg_color = Color(0.10100246, 0.72534674, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI" type="Control" unique_id=419821999 node_paths=PackedStringArray("progress_bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxero")
+progress_bar = NodePath("HBoxContainer/Panel/ProgressBar")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=196207415]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="HBoxContainer" unique_id=1863121300]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/Panel" unique_id=1008664742]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 268.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wviqb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jxero")
+step = 1.0
+value = 50.0
+show_percentage = false

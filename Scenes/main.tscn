@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://do7l3vsqxf4lj"]
 
+[ext_resource type="Script" uid="uid://c28yum4c5v4ig" path="res://Scripts/MainGameScene/main.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://c6b3m7mmlplaj" path="res://Scripts/MainGameScene/asteroid_spawner.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bgpj1j7vpry5s" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bvsy4p2ugn5ha" path="res://Scenes/ui.tscn" id="4_jjvhh"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjgbg"]
 _data = {
@@ -10,6 +12,7 @@ _data = {
 point_count = 5
 
 [node name="Main" type="Node2D" unique_id=2091276514]
+script = ExtResource("1_8gbba")
 
 [node name="Scripts" type="Node" parent="." unique_id=1257398003]
 
@@ -30,5 +33,9 @@ curve = SubResource("Curve2D_jjgbg")
 [node name="SpawnerPos" type="PathFollow2D" parent="SpawnerPath" unique_id=1114359231]
 position = Vector2(-34, -34)
 rotation = 0.009681579
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1044283163]
+
+[node name="UI" parent="CanvasLayer" unique_id=419821999 instance=ExtResource("4_jjvhh")]
 
 [connection signal="timeout" from="Scripts/AsteroidSpawner/SpawnTimer" to="Scripts/AsteroidSpawner" method="_on_timeout"]

@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bf3o57s62bg5c" path="res://icon.svg" id="2_rvlwq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi0dy"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a2bka"]
+radius = 26.0
 
 [node name="Asteroid" type="RigidBody2D" unique_id=333516540]
 collision_layer = 4
@@ -20,5 +24,13 @@ texture = ExtResource("2_rvlwq")
 shape = SubResource("CircleShape2D_bi0dy")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=237586776]
+rect = Rect2(-19, -19, 38, 38)
+
+[node name="PlayerChecker" type="Area2D" parent="." unique_id=1775303936]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerChecker" unique_id=679983111]
+shape = SubResource("CircleShape2D_a2bka")
+debug_color = Color(0.9554543, 1.4439225e-06, 0.54567516, 0.41960785)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exit"]
+[connection signal="body_entered" from="PlayerChecker" to="." method="_on_player_entered"]
