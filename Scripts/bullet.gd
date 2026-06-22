@@ -25,18 +25,17 @@ func _on_area_entered(area: Node2D) -> void:
 
 func _handle_hit(target: Node2D) -> void:
 	if is_player_bullet:
-		if target.is_in_group("player"):
+		if target is Player:
 			return
-		if not (target.is_in_group("enemy") or target.is_in_group("asteroid")):
+		if not (target is EnemyShip or target is Asteroid):
 			return
 	else:
-		if not target.is_in_group("player"):
+		if not target is Player:
 			return
 
 	if target.has_method("hit"):
 		target.hit()
 
 	queue_free()
-
 func _on_left_screen() -> void:
 	queue_free()

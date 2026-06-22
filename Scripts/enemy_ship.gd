@@ -42,9 +42,9 @@ func spawn() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
 	set_process(true)
 	if collision_shape:
-		collision_shape.disabled = false
-	monitoring = true
-	monitorable = true
+		collision_shape.set_deferred("disabled",false)
+	set_deferred("monitoring", true)
+	set_deferred("monitorable", true)
 	_fire_timer.start()
 
 func despawn() -> void:
@@ -52,9 +52,10 @@ func despawn() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	set_process(false)
 	if collision_shape:
-		collision_shape.disabled = true
-	monitoring = false
-	monitorable = false
+		#collision_shape.disabled = true
+		collision_shape.set_deferred("disabled",true)
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
 	if _fire_timer:
 		_fire_timer.stop()
 
@@ -78,11 +79,13 @@ func _fire_at_player() -> void:
 	if player == null or not is_instance_valid(player):
 		return
 
+	var angle_to_player = (player.global_position - global_position).angle()
+
 	var bullet = BULLET_SCENE.instantiate()
 	bullet.is_player_bullet = false
 	bullet.speed = bullet_speed
 	bullet.global_position = global_position
-	bullet.rotation = (player.global_position - global_position).angle()
+	bullet.rotation = angle_to_player + PI / 2  # compensate for bullet.gd's -PI/2 velocity correction
 
 	get_tree().current_scene.add_child(bullet)
 
