@@ -29,6 +29,8 @@ func _ready() -> void:
 
 	# Kick off the very first spawn cycle.
 	timer.start()
+	
+	
 
 func _process(delta: float) -> void:
 	if ship1_is_active:

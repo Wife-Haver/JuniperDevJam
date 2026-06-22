@@ -72,7 +72,6 @@ rotates = false
 player = NodePath("../../../../Player")
 
 [node name="EnemyShipPath2" type="Path2D" parent="Paths" unique_id=482328991]
-visible = false
 position = Vector2(0, 644)
 rotation = -1.5707964
 curve = SubResource("Curve2D_jjvhh")

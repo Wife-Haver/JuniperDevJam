@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cihc7ktf2kno4"
-path="res://.godot/imported/ship_0009.png-d4cb8b1b2386b34898d074bcb935a060.ctex"
+uid="uid://dd1w6kssfgmfs"
+path="res://.godot/imported/Guns.png-1a3573e78e2c65497194c0204e5217e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ship_0009.png"
-dest_files=["res://.godot/imported/ship_0009.png-d4cb8b1b2386b34898d074bcb935a060.ctex"]
+source_file="res://Assets/Guns.png"
+dest_files=["res://.godot/imported/Guns.png-1a3573e78e2c65497194c0204e5217e5.ctex"]
 
 [params]
 
