@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bgpj1j7vpry5s"]
 
 [ext_resource type="Script" uid="uid://cvl6ac4ybxof5" path="res://Scripts/Player/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://c5w4vsmeo2lf2" path="res://Assets/Spaceships.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://c5w4vsmeo2lf2" path="res://Assets/Sprites/Spaceships.png" id="2_fkybt"]
 [ext_resource type="Script" uid="uid://ioj3xedbimuf" path="res://Scripts/Player/movement.gd" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://cshujio7i307a" path="res://Scripts/Player/shooting.gd" id="4_vgqql"]
 [ext_resource type="Script" uid="uid://bwiqv6cxtlmhp" path="res://Scripts/Player/thruster_anim.gd" id="5_8erm5"]
-[ext_resource type="Texture2D" uid="uid://dd1w6kssfgmfs" path="res://Assets/Guns.png" id="5_fkybt"]
-[ext_resource type="Texture2D" uid="uid://cqu3t0urcuwfg" path="res://Assets/Turrets.png" id="5_x3wgy"]
-[ext_resource type="Texture2D" uid="uid://hh76wctj7g6x" path="res://Assets/Thruster_02.png" id="7_3smsa"]
+[ext_resource type="Texture2D" uid="uid://dd1w6kssfgmfs" path="res://Assets/Sprites/Guns.png" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://cqu3t0urcuwfg" path="res://Assets/Sprites/Turrets.png" id="5_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://hh76wctj7g6x" path="res://Assets/FX/Thruster_02.png" id="7_3smsa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 41.01219
@@ -112,7 +112,7 @@ position = Vector2(43, 25)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
-frame_progress = 0.635388
+frame_progress = 0.10825895
 
 [node name="ClickWise2" type="AnimatedSprite2D" parent="." unique_id=1142167584]
 position = Vector2(-37, -28)
@@ -120,7 +120,7 @@ rotation = -3.1415925
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
-frame_progress = 0.90403104
+frame_progress = 0.37690094
 
 [node name="NotClockWise1" type="AnimatedSprite2D" parent="." unique_id=1777333792]
 visible = false
@@ -128,7 +128,7 @@ position = Vector2(36, -26)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
-frame_progress = 0.41384244
+frame_progress = 0.8867145
 
 [node name="NotClockWise2" type="AnimatedSprite2D" parent="." unique_id=729980029]
 visible = false
@@ -137,4 +137,4 @@ rotation = 3.1415927
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
-frame_progress = 0.2695994
+frame_progress = 0.7424713

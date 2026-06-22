@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b08kupks5jdv8"
-path="res://.godot/imported/Missiles.png-ab042333af2871268cdba24a7b3fbdd8.ctex"
+uid="uid://c5w4vsmeo2lf2"
+path="res://.godot/imported/Spaceships.png-9728b8eba1cea5192b86424b10b7432d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Missiles.png"
-dest_files=["res://.godot/imported/Missiles.png-ab042333af2871268cdba24a7b3fbdd8.ctex"]
+source_file="res://Assets/Sprites/Spaceships.png"
+dest_files=["res://.godot/imported/Spaceships.png-9728b8eba1cea5192b86424b10b7432d.ctex"]
 
 [params]
 

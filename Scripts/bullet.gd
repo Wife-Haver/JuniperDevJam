@@ -8,7 +8,14 @@ var is_player_bullet: bool = true
 
 var velocity: Vector2 = Vector2.ZERO
 
+@export var sprite: AnimatedSprite2D
+
 func _ready() -> void:
+	if is_player_bullet:
+		sprite.play("player_bullet")	
+	else:
+		sprite.play("enemy_bullet")
+	
 	velocity = Vector2.RIGHT.rotated(rotation - PI/2) * speed
 
 	#body_entered.connect(_on_body_entered)
@@ -36,6 +43,6 @@ func _handle_hit(target: Node2D) -> void:
 	if target.has_method("hit"):
 		target.hit()
 
-	queue_free()
+	call_deferred("queue_free")
 func _on_left_screen() -> void:
-	queue_free()
+	call_deferred("queue_free")

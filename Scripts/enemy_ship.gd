@@ -68,6 +68,7 @@ func hit() -> void:
 	animation_player.play("hit")
 
 	if hp <= 0:
+		ScoreManager.spawn_hp_pickup(global_position)
 		_die()
 
 func _die() -> void:

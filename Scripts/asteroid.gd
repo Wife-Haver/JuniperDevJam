@@ -9,6 +9,7 @@ var score_value:int = 10
 
 var _dmg_amt:int = 1
 
+
 func _ready():
 	_rotate_speed = randi_range(1,3)
 	_spin_direction = [-1, 1].pick_random()
@@ -19,8 +20,9 @@ func _hit_player():
 
 func hit():
 	ScoreManager.increase_score(score_value)
-	queue_free()
-
+	ScoreManager.spawn_hp_pickup(global_position)
+	
+	call_deferred("queue_free")
 func _on_player_entered(body:Node2D):
 	if body is Player:
 		_hit_player()

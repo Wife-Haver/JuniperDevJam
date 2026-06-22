@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqu3t0urcuwfg"
-path="res://.godot/imported/Turrets.png-54cff0c5c99d8578cf9d4aa91b05575d.ctex"
+uid="uid://hh76wctj7g6x"
+path="res://.godot/imported/Thruster_02.png-a91b0bb95e20b8e5a675f93ef1bcafec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Turrets.png"
-dest_files=["res://.godot/imported/Turrets.png-54cff0c5c99d8578cf9d4aa91b05575d.ctex"]
+source_file="res://Assets/FX/Thruster_02.png"
+dest_files=["res://.godot/imported/Thruster_02.png-a91b0bb95e20b8e5a675f93ef1bcafec.ctex"]
 
 [params]
 

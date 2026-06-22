@@ -22,7 +22,13 @@ func set_current_hp(newHP:int)->void:
 func set_max_hp(newHP:int)->void:
 	_max_hp = newHP
 
+func heal_player(amt:int)->void:
+	if _current_hp >= _max_hp:
+		return
+	else:
+		_current_hp += amt
+	update_current_hp.emit()
+
 func hurt_player(amt:int)->void:
-	
 	_current_hp -= amt
 	update_current_hp.emit()

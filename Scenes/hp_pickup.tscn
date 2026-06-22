@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://riwf4u608bre"]
+
+[ext_resource type="Texture2D" uid="uid://b1i3rl514rjmd" path="res://Assets/Sprites/HP_Pickup.png" id="1_0c0np"]
+[ext_resource type="Script" uid="uid://dc4uan2q3ter0" path="res://Scripts/hp_pickup.gd" id="2_mt3e6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sc26t"]
+
+[node name="HpPickup" type="Sprite2D" unique_id=1636332956]
+texture = ExtResource("1_0c0np")
+script = ExtResource("2_mt3e6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1375444914]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1815472226]
+shape = SubResource("CircleShape2D_sc26t")

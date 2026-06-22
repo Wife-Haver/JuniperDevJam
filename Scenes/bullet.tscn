@@ -1,26 +1,56 @@
 [gd_scene format=3 uid="uid://o37sfangb3tt"]
 
 [ext_resource type="Script" uid="uid://s60sotj1qu87" path="res://Scripts/bullet.gd" id="1_xjght"]
-[ext_resource type="Texture2D" uid="uid://bf3o57s62bg5c" path="res://icon.svg" id="2_oduel"]
+[ext_resource type="Texture2D" uid="uid://62n6yejfhdjk" path="res://Assets/FX/Fx_01.png" id="2_oduel"]
+[ext_resource type="Texture2D" uid="uid://g0khf24oenmb" path="res://Assets/FX/Fx_02.png" id="2_ycag2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6afsh"]
+atlas = ExtResource("2_ycag2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odot3"]
+atlas = ExtResource("2_oduel")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8o6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6afsh")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odot3")
+}],
+"loop": true,
+"name": &"player_bullet",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
-size = Vector2(10, 34)
+size = Vector2(14, 26)
 
-[node name="Bullet" type="Area2D" unique_id=671410255]
+[node name="Bullet" type="Area2D" unique_id=671410255 node_paths=PackedStringArray("sprite")]
 collision_layer = 2
 collision_mask = 28
 script = ExtResource("1_xjght")
+sprite = NodePath("Sprite")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=649517976]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(0.046875004, 0.234375)
-texture = ExtResource("2_oduel")
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2505189]
+rotation = -1.5707964
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_t8o6v")
+animation = &"player_bullet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804759849]
 shape = SubResource("RectangleShape2D_oduel")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=203552101]
-rect = Rect2(-6, -18, 12, 36)
+rect = Rect2(-6, -13, 12, 26)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

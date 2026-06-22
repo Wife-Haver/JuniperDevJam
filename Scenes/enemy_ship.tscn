@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cw50bwyh58w3l"]
 
 [ext_resource type="Script" uid="uid://m3f1bgml30xd" path="res://Scripts/enemy_ship.gd" id="1_fqvla"]
-[ext_resource type="Texture2D" uid="uid://bf3o57s62bg5c" path="res://icon.svg" id="2_fqvla"]
+[ext_resource type="Texture2D" uid="uid://c5w4vsmeo2lf2" path="res://Assets/Sprites/Spaceships.png" id="2_fqvla"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_csf4i"]
-radius = 74.330345
+radius = 46.0
 
 [sub_resource type="Animation" id="Animation_38hgn"]
 length = 0.001
@@ -115,7 +115,10 @@ animation_player = NodePath("AnimationPlayer")
 collision_shape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1129630495]
+scale = Vector2(2, 2)
 texture = ExtResource("2_fqvla")
+region_enabled = true
+region_rect = Rect2(273, 139, 29, 42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553780021]
 shape = SubResource("CircleShape2D_csf4i")

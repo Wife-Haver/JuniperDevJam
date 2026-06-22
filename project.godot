@@ -30,6 +30,10 @@ window/size/window_height_override=864
 window/stretch/mode="canvas_items"
 window/canvas_textures/default_texture_filter=0
 
+[global_group]
+
+Player=""
+
 [input]
 
 flip_spin={
@@ -55,6 +59,7 @@ blah={
 2d_physics/layer_3="Asteroids"
 2d_physics/layer_4="Enemy Ship"
 2d_physics/layer_5="Enemy Bullets"
+2d_physics/layer_6="Pickup"
 
 [physics]
 

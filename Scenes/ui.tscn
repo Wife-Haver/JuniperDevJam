@@ -12,7 +12,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxero"]
-bg_color = Color(0.10100246, 0.72534674, 0, 1)
+bg_color = Color(0.13059074, 0.6566449, 0.8360409, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
