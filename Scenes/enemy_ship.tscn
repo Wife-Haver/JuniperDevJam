@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://cw50bwyh58w3l"]
+
+[ext_resource type="Script" uid="uid://m3f1bgml30xd" path="res://Scripts/enemy_ship.gd" id="1_fqvla"]
+[ext_resource type="Texture2D" uid="uid://bf3o57s62bg5c" path="res://icon.svg" id="2_fqvla"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csf4i"]
+radius = 74.330345
+
+[sub_resource type="Animation" id="Animation_38hgn"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fqvla"]
+resource_name = "hit"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0, 1, -0.033333335, 0, 0, 0, 1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0, 0, -0.033333335, 0.16666667, 0, 0, 1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0, 0, -0.033333335, 0.16666667, 0, 0, 1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.1, 0, 0.1, 0, 1, -0.033333335, 0, 0, 0, 1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38hgn"]
+_data = {
+&"RESET": SubResource("Animation_38hgn"),
+&"hit": SubResource("Animation_fqvla")
+}
+
+[node name="EnemyShip" type="Area2D" unique_id=120402884 node_paths=PackedStringArray("animation_player")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_fqvla")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1129630495]
+texture = ExtResource("2_fqvla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553780021]
+shape = SubResource("CircleShape2D_csf4i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=913587243]
+libraries/ = SubResource("AnimationLibrary_38hgn")

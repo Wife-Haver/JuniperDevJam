@@ -17,6 +17,10 @@ func _ready():
 func _hit_player():
 	PlayerManager.hurt_player(_dmg_amt)
 
+func hit():
+	ScoreManager.increase_score(score_value)
+	queue_free()
+
 func _on_player_entered(body:Node2D):
 	if body is Player:
 		_hit_player()

@@ -33,10 +33,11 @@ player = NodePath("../..")
 position = Vector2(0, -60)
 
 [node name="Sprite2D" type="Sprite2D" parent="Gun" unique_id=542659035]
-position = Vector2(0, -10)
+visible = false
+position = Vector2(0, 15)
 scale = Vector2(0.125, 0.2500001)
 texture = ExtResource("1_v0iea")
 
 [node name="GunBarrel" type="Marker2D" parent="Gun/Sprite2D" unique_id=992768062]
-position = Vector2(0, -71.99998)
+position = Vector2(0, 23.999992)
 gizmo_extents = 50.0

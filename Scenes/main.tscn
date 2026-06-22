@@ -3,13 +3,21 @@
 [ext_resource type="Script" uid="uid://c28yum4c5v4ig" path="res://Scripts/MainGameScene/main.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://c6b3m7mmlplaj" path="res://Scripts/MainGameScene/asteroid_spawner.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bgpj1j7vpry5s" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://c8ggaexc1iq50" path="res://Scripts/enemy_ship_spawner.gd" id="3_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bvsy4p2ugn5ha" path="res://Scenes/ui.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://cw50bwyh58w3l" path="res://Scenes/enemy_ship.tscn" id="5_kry3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjgbg"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -34, -34, 0, 0, 0, 0, 689, -27, 0, 0, 0, 0, 688, 661, 0, 0, 0, 0, -32, 660, 0, 0, 0, 0, -34, -34)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_jjvhh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 50, -108, 0, 0, 0, 0, 50, 753, 0, 0, 0, 0, 596, 756, 0, 0, 0, 0, 603, -105, 0, 0, 0, 0, 51, -105, 0, 0, 0, 0, 50, -108)
+}
+point_count = 6
 
 [node name="Main" type="Node2D" unique_id=2091276514]
 script = ExtResource("1_8gbba")
@@ -18,24 +26,59 @@ script = ExtResource("1_8gbba")
 
 [node name="AsteroidSpawner" type="Node" parent="Scripts" unique_id=833771969 node_paths=PackedStringArray("spawner_pos")]
 script = ExtResource("1_bo1nx")
-spawner_pos = NodePath("../../SpawnerPath/SpawnerPos")
+spawner_pos = NodePath("../../Paths/AsteroidPath/AsteroidPos")
 
 [node name="SpawnTimer" type="Timer" parent="Scripts/AsteroidSpawner" unique_id=466107144]
+wait_time = 2.0
 autostart = true
+
+[node name="EnemyShipSpawner" type="Node" parent="Scripts" unique_id=1583410076 node_paths=PackedStringArray("enemy_ship_1", "path_pos_1", "enemy_ship_2", "path_pos_2")]
+script = ExtResource("3_21xkr")
+enemy_ship_1 = NodePath("../../Paths/EnemyShipPath1/Pos/Ship1")
+path_pos_1 = NodePath("../../Paths/EnemyShipPath1/Pos")
+enemy_ship_2 = NodePath("../../Paths/EnemyShipPath2/Pos/Ship2")
+path_pos_2 = NodePath("../../Paths/EnemyShipPath2/Pos")
 
 [node name="Player" parent="." unique_id=1870216369 instance=ExtResource("1_jjgbg")]
 position = Vector2(320, 320)
 
-[node name="SpawnerPath" type="Path2D" parent="." unique_id=1154844031]
-position = Vector2(0, 7)
-curve = SubResource("Curve2D_jjgbg")
-
-[node name="SpawnerPos" type="PathFollow2D" parent="SpawnerPath" unique_id=1114359231]
-position = Vector2(-34, -34)
-rotation = 0.009681579
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1044283163]
 
 [node name="UI" parent="CanvasLayer" unique_id=419821999 instance=ExtResource("4_jjvhh")]
+
+[node name="Paths" type="Node2D" parent="." unique_id=1288393525]
+
+[node name="AsteroidPath" type="Path2D" parent="Paths" unique_id=1154844031]
+visible = false
+position = Vector2(0, 7)
+curve = SubResource("Curve2D_jjgbg")
+
+[node name="AsteroidPos" type="PathFollow2D" parent="Paths/AsteroidPath" unique_id=1114359231]
+position = Vector2(-34, -34)
+rotation = 0.009681579
+
+[node name="EnemyShipPath1" type="Path2D" parent="Paths" unique_id=1745751599]
+curve = SubResource("Curve2D_jjvhh")
+
+[node name="Pos" type="PathFollow2D" parent="Paths/EnemyShipPath1" unique_id=1076986840]
+position = Vector2(50, -108)
+rotation = 1.5651467
+rotates = false
+
+[node name="Ship1" parent="Paths/EnemyShipPath1/Pos" unique_id=943472137 node_paths=PackedStringArray("player") instance=ExtResource("5_kry3j")]
+player = NodePath("../../../../Player")
+
+[node name="EnemyShipPath2" type="Path2D" parent="Paths" unique_id=482328991]
+position = Vector2(0, 644)
+rotation = -1.5707964
+curve = SubResource("Curve2D_jjvhh")
+
+[node name="Pos" type="PathFollow2D" parent="Paths/EnemyShipPath2" unique_id=416755538]
+position = Vector2(50, -108)
+rotation = 1.5651467
+rotates = false
+
+[node name="Ship2" parent="Paths/EnemyShipPath2/Pos" unique_id=120402884 node_paths=PackedStringArray("player") instance=ExtResource("5_kry3j")]
+player = NodePath("../../../../Player")
 
 [connection signal="timeout" from="Scripts/AsteroidSpawner/SpawnTimer" to="Scripts/AsteroidSpawner" method="_on_timeout"]

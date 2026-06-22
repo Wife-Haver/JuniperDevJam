@@ -22,10 +22,10 @@ func _on_area_entered(area: Node2D) -> void:
 	_handle_hit(area)
 
 func _handle_hit(target: Node2D) -> void:
-	if target is Asteroid:
-		ScoreManager.increase_score(target.score_value)
-		target.queue_free()
-		
+	if target.has_method("hit"):
+		target.hit()
+	
+	
 	queue_free()
 
 func _on_left_screen():
