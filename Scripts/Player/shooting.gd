@@ -12,4 +12,5 @@ func fire():
 	var bullet:Bullet = BULLET_SCENE.instantiate()
 	bullet.global_position = gun_barrel.global_position
 	bullet.rotation = player.rotation
+	bullet.is_player_bullet = true
 	get_tree().current_scene.add_child(bullet)

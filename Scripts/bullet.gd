@@ -3,10 +3,12 @@ extends Area2D
 
 @export var speed: float = 600.0
 
+# Set this at spawn time: true = fired by player, false = fired by an enemy.
+var is_player_bullet: bool = true
+
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	# parent sets rotation
 	velocity = Vector2.RIGHT.rotated(rotation - PI/2) * speed
 
 	#body_entered.connect(_on_body_entered)
@@ -22,11 +24,19 @@ func _on_area_entered(area: Node2D) -> void:
 	_handle_hit(area)
 
 func _handle_hit(target: Node2D) -> void:
+	if is_player_bullet:
+		if target.is_in_group("player"):
+			return
+		if not (target.is_in_group("enemy") or target.is_in_group("asteroid")):
+			return
+	else:
+		if not target.is_in_group("player"):
+			return
+
 	if target.has_method("hit"):
 		target.hit()
-	
-	
+
 	queue_free()
 
-func _on_left_screen():
+func _on_left_screen() -> void:
 	queue_free()

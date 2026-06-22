@@ -107,11 +107,12 @@ _data = {
 &"hit": SubResource("Animation_fqvla")
 }
 
-[node name="EnemyShip" type="Area2D" unique_id=120402884 node_paths=PackedStringArray("animation_player")]
+[node name="EnemyShip" type="Area2D" unique_id=120402884 node_paths=PackedStringArray("animation_player", "collision_shape")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_fqvla")
 animation_player = NodePath("AnimationPlayer")
+collision_shape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1129630495]
 texture = ExtResource("2_fqvla")

@@ -15,9 +15,9 @@ point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 50, -108, 0, 0, 0, 0, 50, 753, 0, 0, 0, 0, 596, 756, 0, 0, 0, 0, 603, -105, 0, 0, 0, 0, 51, -105, 0, 0, 0, 0, 50, -108)
+"points": PackedVector2Array(0, 0, 0, 0, 51, 4, 0, 0, 0, 0, 53, 633, 0, 0, 0, 0, 621, 622, 0, 0, 0, 0, 614, 16, 0, 0, 0, 0, 51, 4)
 }
-point_count = 6
+point_count = 5
 
 [node name="Main" type="Node2D" unique_id=2091276514]
 script = ExtResource("1_8gbba")
@@ -61,20 +61,20 @@ rotation = 0.009681579
 curve = SubResource("Curve2D_jjvhh")
 
 [node name="Pos" type="PathFollow2D" parent="Paths/EnemyShipPath1" unique_id=1076986840]
-position = Vector2(50, -108)
-rotation = 1.5651467
+position = Vector2(51, 4)
 rotates = false
 
 [node name="Ship1" parent="Paths/EnemyShipPath1/Pos" unique_id=943472137 node_paths=PackedStringArray("player") instance=ExtResource("5_kry3j")]
 player = NodePath("../../../../Player")
 
 [node name="EnemyShipPath2" type="Path2D" parent="Paths" unique_id=482328991]
+visible = false
 position = Vector2(0, 644)
 rotation = -1.5707964
 curve = SubResource("Curve2D_jjvhh")
 
 [node name="Pos" type="PathFollow2D" parent="Paths/EnemyShipPath2" unique_id=416755538]
-position = Vector2(50, -108)
+position = Vector2(51, 4)
 rotation = 1.5651467
 rotates = false
 
