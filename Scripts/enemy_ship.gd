@@ -58,6 +58,7 @@ func despawn() -> void:
 	set_deferred("monitorable", false)
 	if _fire_timer:
 		_fire_timer.stop()
+	
 
 func hit() -> void:
 	if hp <= 0:
@@ -70,8 +71,7 @@ func hit() -> void:
 		_die()
 
 func _die() -> void:
-	if ScoreManager and ScoreManager.has_method("add_score"):
-		ScoreManager.add_score(score_value)
+	ScoreManager.increase_score(score_value)
 	ship_destroyed.emit(self)
 	despawn()
 

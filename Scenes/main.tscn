@@ -32,12 +32,16 @@ spawner_pos = NodePath("../../Paths/AsteroidPath/AsteroidPos")
 wait_time = 2.0
 autostart = true
 
-[node name="EnemyShipSpawner" type="Node" parent="Scripts" unique_id=1583410076 node_paths=PackedStringArray("enemy_ship_1", "path_pos_1", "enemy_ship_2", "path_pos_2")]
+[node name="EnemyShipSpawner" type="Node" parent="Scripts" unique_id=1583410076 node_paths=PackedStringArray("enemy_ship_1", "path_pos_1", "enemy_ship_2", "path_pos_2", "timer")]
 script = ExtResource("3_21xkr")
 enemy_ship_1 = NodePath("../../Paths/EnemyShipPath1/Pos/Ship1")
 path_pos_1 = NodePath("../../Paths/EnemyShipPath1/Pos")
 enemy_ship_2 = NodePath("../../Paths/EnemyShipPath2/Pos/Ship2")
 path_pos_2 = NodePath("../../Paths/EnemyShipPath2/Pos")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Scripts/EnemyShipSpawner" unique_id=1670926617]
+wait_time = 10.0
 
 [node name="Player" parent="." unique_id=1870216369 instance=ExtResource("1_jjgbg")]
 position = Vector2(320, 320)
@@ -82,3 +86,4 @@ rotates = false
 player = NodePath("../../../../Player")
 
 [connection signal="timeout" from="Scripts/AsteroidSpawner/SpawnTimer" to="Scripts/AsteroidSpawner" method="_on_timeout"]
+[connection signal="timeout" from="Scripts/EnemyShipSpawner/Timer" to="Scripts/EnemyShipSpawner" method="_on_timer_timeout"]
