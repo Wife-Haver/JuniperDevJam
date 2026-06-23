@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b028qjwg22dxc"
-path="res://.godot/imported/Asteroids_Foreground.png-204f519478f30947ee5fbcc93ca9d8d6.ctex"
+uid="uid://bt630pp14dpn1"
+path="res://.godot/imported/Star_Tiles.png-e6dd520948ae021fef500227dddb3e5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BG/Asteroids_Foreground.png"
-dest_files=["res://.godot/imported/Asteroids_Foreground.png-204f519478f30947ee5fbcc93ca9d8d6.ctex"]
+source_file="res://Assets/BG/Star_Tiles.png"
+dest_files=["res://.godot/imported/Star_Tiles.png-e6dd520948ae021fef500227dddb3e5d.ctex"]
 
 [params]
 

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c28yum4c5v4ig" path="res://Scripts/MainGameScene/main.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://c6b3m7mmlplaj" path="res://Scripts/MainGameScene/asteroid_spawner.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bgpj1j7vpry5s" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://bbro6f22ko0ud" path="res://Assets/BG/BG.png" id="2_6bp64"]
+[ext_resource type="Script" uid="uid://rjrpd6iitm7h" path="res://Scripts/UI/parallax_2d.gd" id="2_344ge"]
 [ext_resource type="Script" uid="uid://c8ggaexc1iq50" path="res://Scripts/enemy_ship_spawner.gd" id="3_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bvsy4p2ugn5ha" path="res://Scenes/ui.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cw50bwyh58w3l" path="res://Scenes/enemy_ship.tscn" id="5_kry3j"]
@@ -21,6 +23,14 @@ point_count = 5
 
 [node name="Main" type="Node2D" unique_id=2091276514]
 script = ExtResource("1_8gbba")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1312247464]
+repeat_size = Vector2(2048, 1536)
+repeat_times = 2
+script = ExtResource("2_344ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1800333722]
+texture = ExtResource("2_6bp64")
 
 [node name="Scripts" type="Node" parent="." unique_id=1257398003]
 

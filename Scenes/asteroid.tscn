@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rp1gatnvo3vh"]
 
 [ext_resource type="Script" uid="uid://cc2ajhvf0uimo" path="res://Scripts/asteroid.gd" id="1_a2bka"]
-[ext_resource type="Texture2D" uid="uid://b028qjwg22dxc" path="res://Assets/BG/Asteroids_Foreground.png" id="2_a2bka"]
+[ext_resource type="Texture2D" uid="uid://b028qjwg22dxc" path="res://Assets/Sprites/Asteroids_Foreground.png" id="2_a2bka"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi0dy"]
 radius = 26.019224
