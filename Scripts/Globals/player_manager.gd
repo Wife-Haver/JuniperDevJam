@@ -11,9 +11,9 @@ signal player_was_hurt
 signal ammo_changed(current: int, max: int)
 signal player_fired
 
-func _input(event):
-	if Input.is_action_just_pressed("blah"):
-		hurt_player(1)
+#func _input(event):
+	#if Input.is_action_just_pressed("blah"):
+		#hurt_player(1)
 
 func get_current_hp()->int:
 	return _current_hp
