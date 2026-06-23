@@ -35,16 +35,14 @@ func _handle_hit(target: Node2D) -> void:
 		elif target is EnemyShip or target is Asteroid:
 			if target.has_method("hit"):
 				target.hit()
-		
+				call_deferred("queue_free")
 	else:
 		if target is Player:
 			PlayerManager.hurt_player(1)
-			
+			call_deferred("queue_free")
 		else:
 			return
-
+			
 	
-
-	call_deferred("queue_free")
 func _on_left_screen() -> void:
 	call_deferred("queue_free")

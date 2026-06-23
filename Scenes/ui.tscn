@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c32oq6ycwj2ik" path="res://Scripts/UI/ui.gd" id="1_jxero"]
 [ext_resource type="Script" uid="uid://8tx11oxn2vph" path="res://Scripts/UI/score_label.gd" id="2_qdvrb"]
 [ext_resource type="Script" uid="uid://cl5vfi4ku8opn" path="res://Scripts/UI/progress_bar.gd" id="3_nf4gj"]
+[ext_resource type="Script" uid="uid://ud5dkmcjrn3k" path="res://Scripts/UI/ammo_imgs.gd" id="3_q7pk6"]
+[ext_resource type="Texture2D" uid="uid://bj5enb8t5ovm7" path="res://Assets/UI/square.png" id="4_2246s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
 bg_color = Color(0, 0, 0, 0.4862745)
@@ -44,20 +46,69 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 script = ExtResource("2_qdvrb")
 
-[node name="BottomBar" type="HBoxContainer" parent="." unique_id=196207415]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=320600636]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -27.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="BottomBar" unique_id=1863121300]
+[node name="AmmoImgs" type="HBoxContainer" parent="VBoxContainer" unique_id=313300472 node_paths=PackedStringArray("ammo_slots")]
+layout_mode = 2
+script = ExtResource("3_q7pk6")
+ammo_slots = [NodePath("Ammo1"), NodePath("Ammo2"), NodePath("Ammo3"), NodePath("Ammo4"), NodePath("Ammo5"), NodePath("Ammo6"), NodePath("Ammo7"), NodePath("Ammo8")]
+
+[node name="Ammo1" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1297510899]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo2" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1426528922]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo3" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1650857444]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo4" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1412264554]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo5" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=584633087]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo6" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1210815902]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo7" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=626045848]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="Ammo8" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=800391227]
+modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
+layout_mode = 2
+texture = ExtResource("4_2246s")
+
+[node name="BottomBar" type="HBoxContainer" parent="VBoxContainer" unique_id=196207415]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="BottomBar/Panel" unique_id=1008664742]
+[node name="Panel" type="Panel" parent="VBoxContainer/BottomBar" unique_id=1863121300]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/BottomBar/Panel" unique_id=1008664742]
 layout_mode = 0
 offset_left = 3.0
 offset_right = 268.0
