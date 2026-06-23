@@ -18,8 +18,6 @@ func _ready() -> void:
 	
 	velocity = Vector2.RIGHT.rotated(rotation - PI/2) * speed
 
-	#body_entered.connect(_on_body_entered)
-	#area_entered.connect(_on_area_entered)
 
 func _process(delta: float) -> void:
 	position += velocity * delta
@@ -34,14 +32,18 @@ func _handle_hit(target: Node2D) -> void:
 	if is_player_bullet:
 		if target is Player:
 			return
-		if not (target is EnemyShip or target is Asteroid):
-			return
+		elif target is EnemyShip or target is Asteroid:
+			if target.has_method("hit"):
+				target.hit()
+		
 	else:
-		if not target is Player:
+		if target is Player:
+			PlayerManager.hurt_player(1)
+			
+		else:
 			return
 
-	if target.has_method("hit"):
-		target.hit()
+	
 
 	call_deferred("queue_free")
 func _on_left_screen() -> void:

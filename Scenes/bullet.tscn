@@ -35,8 +35,8 @@ animations = [{
 size = Vector2(14, 26)
 
 [node name="Bullet" type="Area2D" unique_id=671410255 node_paths=PackedStringArray("sprite")]
-collision_layer = 2
-collision_mask = 28
+collision_layer = 18
+collision_mask = 29
 script = ExtResource("1_xjght")
 sprite = NodePath("Sprite")
 

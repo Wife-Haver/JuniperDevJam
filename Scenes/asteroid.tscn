@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b028qjwg22dxc" path="res://Assets/BG/Asteroids_Foreground.png" id="2_a2bka"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi0dy"]
-radius = 20.0
+radius = 26.019224
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2bka"]
 radius = 26.0

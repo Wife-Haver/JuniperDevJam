@@ -68,7 +68,7 @@ shape = SubResource("CircleShape2D_cvnsp")
 [node name="Movement" type="Node" parent="Scripts" unique_id=2091488820 node_paths=PackedStringArray("player", "thruster_anim")]
 script = ExtResource("3_6t5aa")
 player = NodePath("../..")
-thruster_anim = NodePath("../../ClockWise1")
+thruster_anim = NodePath("../../ThrusterAnims/ClockWise1")
 
 [node name="Shooting" type="Node" parent="Scripts" unique_id=1805270865 node_paths=PackedStringArray("gun_barrel", "player")]
 script = ExtResource("4_vgqql")
@@ -77,10 +77,10 @@ player = NodePath("../..")
 
 [node name="ThrusterAnim" type="Node" parent="Scripts" unique_id=304458797 node_paths=PackedStringArray("clock_wise_1", "clock_wise_2", "not_clock_wise_1", "not_clock_wise_2", "player")]
 script = ExtResource("5_8erm5")
-clock_wise_1 = NodePath("../../ClockWise1")
-clock_wise_2 = NodePath("../../ClickWise2")
-not_clock_wise_1 = NodePath("../../NotClockWise1")
-not_clock_wise_2 = NodePath("../../NotClockWise2")
+clock_wise_1 = NodePath("../../ThrusterAnims/ClockWise1")
+clock_wise_2 = NodePath("../../ThrusterAnims/ClickWise2")
+not_clock_wise_1 = NodePath("../../ThrusterAnims/NotClockWise1")
+not_clock_wise_2 = NodePath("../../ThrusterAnims/NotClockWise2")
 player = NodePath("../..")
 
 [node name="Gun" type="Node2D" parent="." unique_id=1799373774]
@@ -107,14 +107,16 @@ region_rect = Rect2(25, 27, 23, 10)
 position = Vector2(6.666667, 2.9140924e-07)
 gizmo_extents = 50.0
 
-[node name="ClockWise1" type="AnimatedSprite2D" parent="." unique_id=1044596850]
+[node name="ThrusterAnims" type="Node2D" parent="." unique_id=242896791]
+
+[node name="ClockWise1" type="AnimatedSprite2D" parent="ThrusterAnims" unique_id=1044596850]
 position = Vector2(43, 25)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
 frame_progress = 0.10825895
 
-[node name="ClickWise2" type="AnimatedSprite2D" parent="." unique_id=1142167584]
+[node name="ClickWise2" type="AnimatedSprite2D" parent="ThrusterAnims" unique_id=1142167584]
 position = Vector2(-37, -28)
 rotation = -3.1415925
 scale = Vector2(2, 2)
@@ -122,7 +124,7 @@ sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
 frame_progress = 0.37690094
 
-[node name="NotClockWise1" type="AnimatedSprite2D" parent="." unique_id=1777333792]
+[node name="NotClockWise1" type="AnimatedSprite2D" parent="ThrusterAnims" unique_id=1777333792]
 visible = false
 position = Vector2(36, -26)
 scale = Vector2(2, 2)
@@ -130,10 +132,10 @@ sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
 frame_progress = 0.8867145
 
-[node name="NotClockWise2" type="AnimatedSprite2D" parent="." unique_id=729980029]
+[node name="NotClockWise2" type="AnimatedSprite2D" parent="ThrusterAnims" unique_id=729980029]
 visible = false
 position = Vector2(-43, 23)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 autoplay = "default"
