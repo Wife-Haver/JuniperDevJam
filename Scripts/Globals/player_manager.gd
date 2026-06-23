@@ -7,9 +7,7 @@ var _max_ammo: int = 8
 var _player_ammo:int = 8
 
 signal update_current_hp
-
 signal player_was_hurt
-
 signal ammo_changed(current: int, max: int)
 signal player_fired
 
@@ -44,6 +42,14 @@ func hurt_player(amt:int)->void:
 
 func get_max_ammo() -> int:
 	return _max_ammo
+
+func set_max_ammo(newMaxAmmo: int) -> void:
+	_max_ammo = newMaxAmmo
+	ammo_changed.emit(_player_ammo, _max_ammo)
+
+func set_ammo(newAmmo: int) -> void:
+	_player_ammo = newAmmo
+	ammo_changed.emit(_player_ammo, _max_ammo)
 
 func use_ammo() -> bool:
 	if _player_ammo <= 0:

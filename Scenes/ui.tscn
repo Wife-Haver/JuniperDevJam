@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://cl5vfi4ku8opn" path="res://Scripts/UI/progress_bar.gd" id="3_nf4gj"]
 [ext_resource type="Script" uid="uid://ud5dkmcjrn3k" path="res://Scripts/UI/ammo_imgs.gd" id="3_q7pk6"]
 [ext_resource type="Texture2D" uid="uid://bj5enb8t5ovm7" path="res://Assets/UI/square.png" id="4_2246s"]
+[ext_resource type="Script" uid="uid://bw0moktypxoch" path="res://Scripts/UI/buttons.gd" id="6_ryf15"]
+[ext_resource type="Texture2D" uid="uid://d3qqlqa2kluu1" path="res://Assets/UI/Switch.png" id="6_smcll"]
+[ext_resource type="Texture2D" uid="uid://bwsjck4fisad4" path="res://Assets/UI/Shoot.png" id="7_ryf15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
 bg_color = Color(0, 0, 0, 0.4862745)
@@ -46,69 +49,73 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 script = ExtResource("2_qdvrb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=320600636]
+[node name="HBoxContainer" type="HSplitContainer" parent="." unique_id=1271815133]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -27.0
-offset_bottom = -27.0
+offset_top = -66.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
+dragging_enabled = false
 
-[node name="AmmoImgs" type="HBoxContainer" parent="VBoxContainer" unique_id=313300472 node_paths=PackedStringArray("ammo_slots")]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=320600636]
+layout_mode = 2
+
+[node name="AmmoImgs" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=313300472 node_paths=PackedStringArray("ammo_slots")]
 layout_mode = 2
 script = ExtResource("3_q7pk6")
 ammo_slots = [NodePath("Ammo1"), NodePath("Ammo2"), NodePath("Ammo3"), NodePath("Ammo4"), NodePath("Ammo5"), NodePath("Ammo6"), NodePath("Ammo7"), NodePath("Ammo8")]
 
-[node name="Ammo1" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1297510899]
+[node name="Ammo1" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=1297510899]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo2" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1426528922]
+[node name="Ammo2" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=1426528922]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo3" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1650857444]
+[node name="Ammo3" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=1650857444]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo4" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1412264554]
+[node name="Ammo4" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=1412264554]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo5" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=584633087]
+[node name="Ammo5" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=584633087]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo6" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=1210815902]
+[node name="Ammo6" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=1210815902]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo7" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=626045848]
+[node name="Ammo7" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=626045848]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="Ammo8" type="TextureRect" parent="VBoxContainer/AmmoImgs" unique_id=800391227]
+[node name="Ammo8" type="TextureRect" parent="HBoxContainer/VBoxContainer/AmmoImgs" unique_id=800391227]
 modulate = Color(0.85490197, 0.33333334, 0.8156863, 1)
 layout_mode = 2
 texture = ExtResource("4_2246s")
 
-[node name="BottomBar" type="HBoxContainer" parent="VBoxContainer" unique_id=196207415]
+[node name="BottomBar" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=196207415]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="VBoxContainer/BottomBar" unique_id=1863121300]
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/BottomBar" unique_id=1863121300]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/BottomBar/Panel" unique_id=1008664742]
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/BottomBar/Panel" unique_id=1008664742]
 layout_mode = 0
 offset_left = 3.0
 offset_right = 268.0
@@ -119,3 +126,33 @@ step = 1.0
 value = 50.0
 show_percentage = false
 script = ExtResource("3_nf4gj")
+
+[node name="Buttons" type="HBoxContainer" parent="HBoxContainer" unique_id=965375022]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+alignment = 2
+script = ExtResource("6_ryf15")
+
+[node name="SwapSpin" type="Button" parent="HBoxContainer/Buttons" unique_id=1941345978]
+layout_mode = 2
+icon = ExtResource("6_smcll")
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/Buttons" unique_id=872373767]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Shoot" type="Button" parent="HBoxContainer/Buttons" unique_id=1634778771]
+layout_mode = 2
+icon = ExtResource("7_ryf15")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/Buttons" unique_id=151760391]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[connection signal="button_down" from="HBoxContainer/Buttons/SwapSpin" to="HBoxContainer/Buttons" method="on_swap_spin_button_down"]
+[connection signal="button_up" from="HBoxContainer/Buttons/SwapSpin" to="HBoxContainer/Buttons" method="on_swap_spin_button_up"]
+[connection signal="button_down" from="HBoxContainer/Buttons/Shoot" to="HBoxContainer/Buttons" method="_on_shoot_button_down"]
+[connection signal="button_up" from="HBoxContainer/Buttons/Shoot" to="HBoxContainer/Buttons" method="_on_shoot_button_up"]

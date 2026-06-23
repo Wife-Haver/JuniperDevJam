@@ -15,4 +15,6 @@ func start_game()->void:
 func restart_stats()->void:
 	PlayerManager.set_max_hp(10)
 	PlayerManager.set_current_hp(10)
+	PlayerManager.set_max_ammo(8)
+	PlayerManager.set_ammo(8)
 	ScoreManager.set_player_score(0)

@@ -11,13 +11,10 @@ var spin_direction: int = 1  # 1 = clockwise, -1 = counterclockwise
 
 func _physics_process(delta):
 	rotate(delta)
+	
+	if Input.is_action_just_pressed("flip_spin"):
+		spin_direction *= -1
+		player.switch_spin.emit(spin_direction)
 
 func rotate(delta):
 	player.rotation += rotate_speed * spin_direction * delta
-
-func _unhandled_input(event):
-	if event.is_action_pressed("flip_spin"):
-		spin_direction *= -1
-		player.switch_spin.emit(spin_direction)
-	
-	
