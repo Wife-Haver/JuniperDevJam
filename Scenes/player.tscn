@@ -184,7 +184,7 @@ recharge_tick_timer = NodePath("RechargeTick")
 wait_time = 0.2
 
 [node name="RechargeTime" type="Timer" parent="Scripts/Shooting" unique_id=1986194949]
-wait_time = 0.5
+wait_time = 0.2
 
 [node name="RechargeTick" type="Timer" parent="Scripts/Shooting" unique_id=1651452299]
 

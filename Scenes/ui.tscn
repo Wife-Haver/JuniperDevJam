@@ -5,9 +5,6 @@
 [ext_resource type="Script" uid="uid://cl5vfi4ku8opn" path="res://Scripts/UI/progress_bar.gd" id="3_nf4gj"]
 [ext_resource type="Script" uid="uid://ud5dkmcjrn3k" path="res://Scripts/UI/ammo_imgs.gd" id="3_q7pk6"]
 [ext_resource type="Texture2D" uid="uid://bj5enb8t5ovm7" path="res://Assets/UI/square.png" id="4_2246s"]
-[ext_resource type="Script" uid="uid://bw0moktypxoch" path="res://Scripts/UI/buttons.gd" id="6_ryf15"]
-[ext_resource type="Texture2D" uid="uid://d3qqlqa2kluu1" path="res://Assets/UI/Switch.png" id="6_smcll"]
-[ext_resource type="Texture2D" uid="uid://bwsjck4fisad4" path="res://Assets/UI/Shoot.png" id="7_ryf15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
 bg_color = Color(0, 0, 0, 0.4862745)
@@ -126,32 +123,3 @@ step = 1.0
 value = 50.0
 show_percentage = false
 script = ExtResource("3_nf4gj")
-
-[node name="Buttons" type="HBoxContainer" parent="HBoxContainer" unique_id=965375022]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-script = ExtResource("6_ryf15")
-
-[node name="SwapSpin" type="Button" parent="HBoxContainer/Buttons" unique_id=1941345978]
-layout_mode = 2
-icon = ExtResource("6_smcll")
-
-[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/Buttons" unique_id=872373767]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="Shoot" type="Button" parent="HBoxContainer/Buttons" unique_id=1634778771]
-layout_mode = 2
-icon = ExtResource("7_ryf15")
-
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer/Buttons" unique_id=151760391]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[connection signal="button_down" from="HBoxContainer/Buttons/SwapSpin" to="HBoxContainer/Buttons" method="on_swap_spin_button_down"]
-[connection signal="button_up" from="HBoxContainer/Buttons/SwapSpin" to="HBoxContainer/Buttons" method="on_swap_spin_button_up"]
-[connection signal="button_down" from="HBoxContainer/Buttons/Shoot" to="HBoxContainer/Buttons" method="_on_shoot_button_down"]
-[connection signal="button_up" from="HBoxContainer/Buttons/Shoot" to="HBoxContainer/Buttons" method="_on_shoot_button_up"]
